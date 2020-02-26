@@ -41,6 +41,8 @@ public class MapGen : MonoBehaviour
                         {
                             Transform newTile = Instantiate(Bush, tilePosition + Vector3.up * .25f, Quaternion.Euler(Vector3.right * 90)) as Transform;
                             newTile.localScale = Vector3.one * (1 - outlinePercent);
+                            Transform test = Instantiate(Ground, tilePosition - Vector3.up * .5f, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                            test.localScale = Vector3.one * (1 - outlinePercent);
                         }
                         else
                         {
