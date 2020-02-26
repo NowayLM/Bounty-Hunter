@@ -6,72 +6,106 @@ using UnityEngine;
 public class MapGen : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform tilePrefab;
+    public Transform Ground;
+    public Transform Wall;
+    public Transform Bush;
+    public Transform Water;
+    public Transform Heal;
+
     [Range(0,1)]
     public float outlinePercent;
 
     public void GenMap()
     {
-        char[,] arr = fun("1");
-        for (int x = 0; x < arr.GetLength(0); x++)
+        char[][] arr = ReadMap("1");
+        for (int x = 0; x < arr.Length; x++)
         {
-            for (int y = 0; y < arr.GetLength(1); y++)
+            for (int y = 0; y < arr[x].Length; y++)
             {
-                Vector3 tilePosition = new Vector3(-arr.GetLength(0) / 2 + 0.5f + x, 0, -arr.GetLength(1) + 0.5f + y);
-                Transform newTile = Instantiate(tilePrefab, tilePosition, Quaternion.Euler(Vector3.right * 90)) as Transform;
-                newTile.localScale = Vector3.one * (1 - outlinePercent);
-            }
-
-        }
-    }
-
-    public static char[,] fun(string map)
-    {
-        using (StreamReader sr = File.OpenText($"C:\\Users\\lance\\Dev\\EPITA\\PROJET S2\\BountyHunter\\Maps\\{map}.txt"))
-        {
-            string s = "";
-            s = sr.ReadLine();
-            int l = new int();
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i] == ';')
+                Vector3 tilePosition = new Vector3(-arr.Length / 2 + 0.5f + x, 0, -arr[x].Length + 0.5f + y);
+                if (arr[x][y] == '.') 
                 {
-                    l++;
-                }
-            }
-            int width = 0;
-            int m = 1;
-            while (s[m] != ';')
-            {
-                if (s[m] != ',')
-                {
-                    width++;
-                }
-                m++;
-            }
-
-            char[,] arr = new char[l,width];
-            int k = new int();
-            int j = new int();
-            foreach (char i in s)
-            {
-                if (!(i == ';'))
-                {
-                    arr[k, j] = i;
-                    j++;
+                    Transform newTile = Instantiate(Ground, tilePosition - Vector3.up * .5f, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                    newTile.localScale = Vector3.one * (1 - outlinePercent);
                 }
                 else
                 {
-                    k++;
-                    j = 0;
+                    if (arr[x][y] == '2')
+                    {
+                        Transform newTile = Instantiate(Wall, tilePosition + Vector3.up * .5f, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                        newTile.localScale = Vector3.one * (1 - outlinePercent);
+                    }
+                    else
+                    {
+                        if (arr[x][y] == '3')
+                        {
+                            Transform newTile = Instantiate(Bush, tilePosition + Vector3.up * .25f, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                            newTile.localScale = Vector3.one * (1 - outlinePercent);
+                        }
+                        else
+                        {
+                            if (arr[x][y] == '4')
+                            {
+                                Transform newTile = Instantiate(Water, tilePosition - Vector3.up * .5f, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                                newTile.localScale = Vector3.one * (1 - outlinePercent);
+                            }
+                            else
+                            {
+                                if (arr[x][y] == '5')
+                                {
+                                    Transform newTile = Instantiate(Heal, tilePosition, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                                    newTile.localScale = Vector3.one * (1 - outlinePercent);
+                                }
+                            }
+                        }
+                    }
                 }
+                
             }
-            return arr;
+
         }
     }
 
+    /**
+     * readMap
+     * 
+     * Read a map text file and convert into a char[][]
+     * 
+     * Expected syntax for map files:
+     * 
+     * ......
+     * ..22..
+     * .2.2.2
+     * ......
+     * ..22..
+     * .2.2.2
+     * 
+     * etc.
+     *
+     */
+    public static char[][] ReadMap(string mapName)
+    {
+        // List to hold the lines of char[]
+        List<char[]> mapList = new List<char[]>();
 
-    void Start()
+        // Read the lines of the specified map
+        string[] mapLines = File.ReadAllLines($"C:\\Users\\lance\\Dev\\EPITA\\PROJET S2\\Bounty-Hunter\\BountyHunter\\Maps\\{mapName}.txt");
+
+        // Parse each line
+        foreach (string mapLine in mapLines)
+        {
+            // Trim commas (they are optional)
+            // Convert strings to char[] and add to the list
+            mapList.Add(mapLine.Trim(new char[] { ',' }).ToCharArray());
+        }
+
+        // Convert to char[][] (array of arrays) a  nd return
+        return mapList.ToArray();
+
+}
+
+
+void Start()
     {
         GenMap();
     }
