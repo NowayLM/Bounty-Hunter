@@ -91,7 +91,7 @@ public class MapGen : MonoBehaviour
         List<char[]> mapList = new List<char[]>();
 
         // Read the lines of the specified map
-        string[] mapLines = File.ReadAllLines($"C:\\Users\\lance\\Dev\\EPITA\\PROJET S2\\Bounty-Hunter\\BountyHunter\\Maps\\{mapName}.txt");
+        string[] mapLines = File.ReadAllLines($"C:\\Users\\maxna\\Documents\\PROJET S2 UNITY\\Bounty-Hunter\\BountyHunter\\Maps\\{mapName}.txt");
 
         // Parse each line
         foreach (string mapLine in mapLines)
