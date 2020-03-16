@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 5b6a8a2dd97a6ed46a204d511534face
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tw Cen MT
+  fontNames:
+  - Tw Cen MT
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2b5a4a964d17b304c8f8375e5f7d7e83, type: 3}
+  - {fileID: 12800000, guid: 1d8d608a09d3bd740aba49f889207a15, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 2527c72f75fee534ba6285b58c9158cd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bodoni MT
+  fontNames:
+  - Bodoni MT
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1adfa651627ebcd49bd2f4f604ccf81e, type: 3}
+  - {fileID: 12800000, guid: 247e71dd4a86bfb4ca8b24ccd7e89164, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
