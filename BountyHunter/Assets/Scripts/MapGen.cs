@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System;
 using UnityEngine;
 
 public class MapGen : MonoBehaviour
@@ -17,7 +18,7 @@ public class MapGen : MonoBehaviour
 
     public void GenMap()
     {
-        char[][] arr = ReadMap("1");
+        char[][] arr = ReadMap("3");
         for (int x = 0; x < arr.Length; x++)
         {
             for (int y = 0; y < arr[x].Length; y++)
@@ -87,11 +88,14 @@ public class MapGen : MonoBehaviour
      */
     public static char[][] ReadMap(string mapName)
     {
-        // List to hold the lines of char[]
-        List<char[]> mapList = new List<char[]>();
+        // Get the map asset
+        TextAsset mapAsset = Resources.Load<TextAsset>("Maps/" + mapName);
 
         // Read the lines of the specified map
-        string[] mapLines = File.ReadAllLines($"C:\\Users\\maxna\\Documents\\PROJET S2 UNITY\\Bounty-Hunter\\BountyHunter\\Maps\\{mapName}.txt");
+        string[] mapLines = mapAsset.text.Split('\n');
+
+        // List to hold the lines of char[]
+        List<char[]> mapList = new List<char[]>();
 
         // Parse each line
         foreach (string mapLine in mapLines)
