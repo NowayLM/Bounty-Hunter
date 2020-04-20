@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 0251b2f646ed5344e9bffc43d4ffef68
+guid: b6f25b6b6ae98d04fa00a11629859a28
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 6587577108731456897
+    second: Cube.030|Cube.030Action
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -87,7 +90,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

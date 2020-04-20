@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!120 &154897340
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1061,7 +1061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2053276067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,8 +1075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ground: {fileID: 1611069160981945418, guid: d8420673fc93c944eb35e5e211998eaa, type: 3}
-  Wall: {fileID: -4216859302048453862, guid: ef8253c98c93c6941b381757c81e5813, type: 3}
-  Bush: {fileID: -4216859302048453862, guid: 0251b2f646ed5344e9bffc43d4ffef68, type: 3}
+  Wall: {fileID: -4216859302048453862, guid: b6f25b6b6ae98d04fa00a11629859a28, type: 3}
+  Bush: {fileID: -4216859302048453862, guid: 5ab3f3656cb6e384bac56d121278ae05, type: 3}
   Water: {fileID: 4102687030461678688, guid: e5ae0e2d7a22514458f88914b08d8909, type: 3}
   Heal: {fileID: -4216859302048453862, guid: 66447aaf42c5f1c49b7e1a9f10ba00f2, type: 3}
   decalage: -0.19
