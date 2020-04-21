@@ -8,7 +8,6 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        Camera.DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene(1);
     }
 
