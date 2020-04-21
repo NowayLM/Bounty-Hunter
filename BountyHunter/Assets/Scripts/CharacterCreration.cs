@@ -26,8 +26,8 @@ public class CharacterCreration : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButton(0))
-            transform.Rotate(new Vector3(0.0f, Input.GetAxis("Mouse X"), 0.0f));
+        if (Input.GetMouseButton(0))
+            transform.Rotate(new Vector3(transform.position.z, Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
     }
 
     public void Select(int index)
