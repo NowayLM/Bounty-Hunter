@@ -24,10 +24,13 @@ public class CharacterCreration : MonoBehaviour
         models[selectionIndex].SetActive(true);
     }
 
+    float speed = 50.0f;
+
     private void Update()
     {
-        if(Input.GetMouseButton(0))
-            transform.Rotate(new Vector3(0.0f, Input.GetAxis("Mouse X"), 0.0f));
+        transform.Rotate(Vector3.up * speed * Time.deltaTime);
+        if (Input.GetMouseButton(0))
+            transform.Rotate(new Vector3(transform.position.z * 3, Input.GetAxis("Mouse X") * 3, Input.GetAxis("Mouse Y") * 3));
     }
 
     public void Select(int index)
