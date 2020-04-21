@@ -44,4 +44,9 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
+
+    public void Mute()
+    {
+        AudioListener.pause = !AudioListener.pause;
+    }
 }
