@@ -18,6 +18,8 @@ public class MapGen : MonoBehaviour
     [Range(0,1)]
     public float outlinePercent;
 
+    private static Vector3 wall1 = new Vector3(0.9f, 0.63f, 1) * 24;
+
     public void GenMap()
     {
         char[][] arr = ReadMap("1");
@@ -28,15 +30,15 @@ public class MapGen : MonoBehaviour
                 Vector3 tilePosition = new Vector3(-arr.Length / 2 + 0.5f + x, 0, -arr[x].Length + 0.5f + y);
                 if (arr[x][y] == '.') 
                 {
-                    Transform newTile = Instantiate(Ground, tilePosition - Vector3.up * .5f, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                    Transform newTile = Instantiate(Ground, tilePosition - Vector3.up * .2f, Quaternion.Euler(Vector3.right * 90)) as Transform;
                     newTile.localScale = Vector3.one * (1 - outlinePercent);
                 }
                 else
                 {
                     if (arr[x][y] == '2')
                     {
-                        Transform newTile = Instantiate(Wall, tilePosition + Vector3.up * .04f, Quaternion.Euler(Vector3.right * -90)) as Transform;
-                        newTile.localScale = Vector3.one * (1 - outlinePercent) * 24f;
+                        Transform newTile = Instantiate(Wall, tilePosition + Vector3.up * .04f + Vector3.right * -0.28f + Vector3.forward * decalage, Quaternion.Euler(Vector3.right * -90)) as Transform;
+                        newTile.localScale = wall1;
                     }
                     else
                     {
@@ -44,7 +46,7 @@ public class MapGen : MonoBehaviour
                         {
                             Transform newTile = Instantiate(Bush, tilePosition + Vector3.up * .25f, Quaternion.Euler(Vector3.left * 90f)) as Transform;
                             newTile.localScale = Vector3.one * (1 - outlinePercent) * 25f;
-                            Transform test = Instantiate(Ground, tilePosition - Vector3.up * .5f, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                            Transform test = Instantiate(Ground, tilePosition - Vector3.up * .2f, Quaternion.Euler(Vector3.right * 90)) as Transform;
                             test.localScale = Vector3.one * (1 - outlinePercent);
                         }
                         else
@@ -58,8 +60,10 @@ public class MapGen : MonoBehaviour
                             {
                                 if (arr[x][y] == '5')
                                 {
-                                    Transform newTile = Instantiate(Heal, tilePosition, Quaternion.Euler(Vector3.right * 90)) as Transform;
-                                    newTile.localScale = Vector3.one * (1 - outlinePercent);
+                                    Transform newTile = Instantiate(Heal, tilePosition + Vector3.up, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                                    newTile.localScale = Vector3.one * (1 - outlinePercent) * 0.2f;
+                                    Transform test = Instantiate(Ground, tilePosition - Vector3.up * .2f, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                                    test.localScale = Vector3.one * (1 - outlinePercent);
                                 }
                             }
                         }

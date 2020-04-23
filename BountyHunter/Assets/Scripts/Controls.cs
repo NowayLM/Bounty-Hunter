@@ -7,7 +7,7 @@ public class Controls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("Player").transform.position = new Vector3(-8.5f, 0, -8.5f);
+        GameObject.Find("Player").transform.position = new Vector3(-8.5f, .7f, -8.5f);
     }
 
     // Update is called once per frame
@@ -42,6 +42,8 @@ public class Controls : MonoBehaviour
             deltaX /= 2;
             deltaZ /= 2;
         }
-        GameObject.Find("Player").transform.position = new Vector3(x + deltaX, y, z - deltaZ);
+        GameObject.Find("Player").transform.position += new Vector3 (deltaX, 0, 0 - deltaZ);
+        //Quaternion target = Quaternion.Euler(0, deltaX, 0);
+        GameObject.Find("Player").transform.rotation = Quaternion.Euler(-90, Mathf.Rad2Deg * (Mathf.Atan2(deltaZ, deltaX)), 0);
     }
 }
