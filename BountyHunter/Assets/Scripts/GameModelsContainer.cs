@@ -4,35 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
-public class CharacterCreration : MonoBehaviour
+public class GameModelsContainer : MonoBehaviour
 {
     private List<GameObject> models;
     // Default index 
     private int selectionIndex = 0;
 
-    private void Start()
+    private void Awake()
     {
         selectionIndex = PlayerPrefs.GetInt("CharacterSelected");
         models = new List<GameObject>();
 
-        foreach(Transform t in transform)
+        foreach (Transform t in transform)
         {
             models.Add(t.gameObject);
             t.gameObject.SetActive(false);
         }
 
         models[selectionIndex].SetActive(true);
-    }
-
-    float speed = 50.0f;
-
-    private void Update()
-    {
-        // Passive rotation
-        transform.Rotate(Vector3.up * speed * Time.deltaTime);
-        // Active rotation
-        if (Input.GetMouseButton(0))
-            transform.Rotate(new Vector3(transform.position.z * 3, Input.GetAxis("Mouse X") * 3, Input.GetAxis("Mouse Y") * 3));
     }
 
     public void Select(int index)

@@ -12,14 +12,15 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-        {
+        //if (instance == null)
+        //instance = this;
+        //else
+        //{
             // This avoids having 2 AudioManagers in the same scene
-            Destroy(gameObject);
-            return;
-        }
+        //    Destroy(gameObject);
+        //    return;
+        //}
+        //
 
         DontDestroyOnLoad(gameObject);
 
