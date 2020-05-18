@@ -9,6 +9,5 @@ public class DestroyMusic : MonoBehaviour
     {
         GameObject A = GameObject.FindGameObjectWithTag("Music");
         Destroy(A);
-        //you're welcome
     }
 }
