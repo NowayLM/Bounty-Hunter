@@ -5,9 +5,26 @@ using UnityEngine;
 public class Controls : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject model1;
+    public GameObject model2;
+    private GameObject currentModel; 
     void Start()
     {
+        //model1.SetActive(false);
+        //model2.SetActive(false);
         GameObject.Find("Player").transform.position = new Vector3(-8.5f, .7f, -8.5f);
+        //if (PlayerPrefs.GetInt("CharacterSelected") == 0)
+        //{
+            //model1.SetActive(true);
+            //currentModel = Instantiate(model1, GameObject.Find("Player").transform.position, GameObject.Find("Player").transform.rotation) as GameObject;
+            //currentModel.transform.parent = transform;
+        //}
+        //else if(PlayerPrefs.GetInt("CharacterSelected") == 1)
+        //{
+           // model2.SetActive(true);
+            //currentModel = Instantiate(model2, GameObject.Find("Player").transform.position, Quaternion.Euler(10, 0, 269.5f)) as GameObject;
+            //currentModel.transform.parent = transform;
+        //}
     }
 
     // Update is called once per frame
@@ -43,7 +60,6 @@ public class Controls : MonoBehaviour
             deltaZ /= 2;
         }
         GameObject.Find("Player").transform.position += new Vector3 (deltaX, 0, 0 - deltaZ);
-        //Quaternion target = Quaternion.Euler(0, deltaX, 0);
         GameObject.Find("Player").transform.rotation = Quaternion.Euler(-90, Mathf.Rad2Deg * (Mathf.Atan2(deltaZ, deltaX)), 0);
     }
 }
