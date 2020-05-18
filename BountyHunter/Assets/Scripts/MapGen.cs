@@ -22,7 +22,8 @@ public class MapGen : MonoBehaviour
 
     public void GenMap()
     {
-        char[][] arr = ReadMap("1");
+        string Map = GetTheMap.map;
+        char[][] arr = ReadMap(Map);
         for (int x = 0; x < arr.Length; x++)
         {
             for (int y = 0; y < arr[x].Length; y++)
