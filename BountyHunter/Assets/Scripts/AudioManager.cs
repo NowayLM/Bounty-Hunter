@@ -13,13 +13,14 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         if (instance == null)
-            instance = this;
+        instance = this;
         else
         {
             // This avoids having 2 AudioManagers in the same scene
             Destroy(gameObject);
             return;
         }
+        
 
         DontDestroyOnLoad(gameObject);
 
