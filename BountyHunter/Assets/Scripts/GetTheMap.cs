@@ -12,7 +12,8 @@ public class GetTheMap : MonoBehaviour
     public static string map = GetMap();
     public static string GetMap()
     {
-        string[] mapsList = System.IO.Directory.GetFiles("C:/Users/maxna/Documents/PROJET S2 UNITY/Bounty-Hunter/BountyHunter/Assets/Resources/Maps");
+        string[] mapsList = System.IO.Directory.GetFiles(Directory.GetCurrentDirectory() + "/Assets/Resources/Maps");
+
         List<string> mapsList2 = new List<string>();
         for (int i = 0; i < mapsList.Length; i++)
         {

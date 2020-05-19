@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UIElements;
 
 public class CharacterCreration : MonoBehaviour
 {
@@ -26,13 +27,20 @@ public class CharacterCreration : MonoBehaviour
 
     float speed = 50.0f;
 
+    Vector3 mPrevPos = Vector3.zero;
+    Vector3 mPosDelta = Vector3.zero;
+
     private void Update()
     {
-        // Passive rotation
-        transform.Rotate(Vector3.up * speed * Time.deltaTime);
+       
         // Active rotation
         if (Input.GetMouseButton(0))
-            transform.Rotate(new Vector3(transform.position.z * 3, Input.GetAxis("Mouse X") * 3, Input.GetAxis("Mouse Y") * 3));
+        {
+            transform.Rotate(new Vector3(transform.position.x, -Input.GetAxis("Mouse X")*2, -Input.GetAxis("Mouse Y")*2));
+        }
+        else
+            // Passive rotation
+            transform.Rotate(Vector3.down * speed * Time.deltaTime);
     }
 
     public void Select(int index)
