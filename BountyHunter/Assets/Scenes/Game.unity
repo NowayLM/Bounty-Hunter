@@ -197,22 +197,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e16b8f86a16077347a53e840a62717c2,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e16b8f86a16077347a53e840a62717c2,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e16b8f86a16077347a53e840a62717c2,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: e16b8f86a16077347a53e840a62717c2,
         type: 3}
       propertyPath: m_Name
-      value: snipee
+      value: Hawk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16b8f86a16077347a53e840a62717c2, type: 3}
@@ -449,6 +449,7 @@ Transform:
   m_LocalPosition: {x: -11.5, y: -0.5, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
+  - {fileID: 1470854529}
   - {fileID: 1701826949}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -575,7 +576,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: e55d2fc136b3ad84eab3b3a94b442d04,
         type: 3}
       propertyPath: m_Name
-      value: chevro
+      value: Chevro
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: e55d2fc136b3ad84eab3b3a94b442d04,
         type: 3}
@@ -892,7 +893,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: d8da9358099b3d74e80c45805ac62c5f,
         type: 3}
       propertyPath: m_Name
-      value: tankie
+      value: Tanky
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: d8da9358099b3d74e80c45805ac62c5f,
         type: 3}
@@ -1076,7 +1077,7 @@ GameObject:
   - component: {fileID: 1470854529}
   - component: {fileID: 1470854528}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Shooting system
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1095,6 +1096,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 6933520006559533912, guid: 0d86e3cac8c0ad442911ed24f90e7c2f, type: 3}
+  sniper: {fileID: 7681503144543792032, guid: 1ae66c051232e334d8436bbc4fd39342, type: 3}
+  wave: {fileID: 7240583693669509395, guid: 455ee63ed9a045d439dea2f5506ae97f, type: 3}
+  i: 0
 --- !u!4 &1470854529
 Transform:
   m_ObjectHideFlags: 0
@@ -1102,12 +1106,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470854527}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.401012, y: 0.9955721, z: -10.849929}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.28282166, y: 30.9998, z: 4.273066}
+  m_LocalScale: {x: 2.857143, y: 2.8571434, z: 2.8571434}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 175947683}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1495241811
 PrefabInstance:
@@ -1189,7 +1193,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: f65aaa6485417b14aae86f8c10b735d5,
         type: 3}
       propertyPath: m_Name
-      value: daedon
+      value: Daeodon
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: f65aaa6485417b14aae86f8c10b735d5,
         type: 3}
@@ -1238,7 +1242,7 @@ Transform:
   - {fileID: 109485966}
   - {fileID: 1596251154}
   m_Father: {fileID: 175947683}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1701826950
 MonoBehaviour:
@@ -1523,22 +1527,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8b674335c2f399245b8e5135e8aa5c2b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 13.5
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8b674335c2f399245b8e5135e8aa5c2b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 26.5
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8b674335c2f399245b8e5135e8aa5c2b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.5
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8b674335c2f399245b8e5135e8aa5c2b,
         type: 3}
       propertyPath: m_Name
-      value: sonos
+      value: Sonos
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8b674335c2f399245b8e5135e8aa5c2b,
         type: 3}

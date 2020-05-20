@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class GameModelsContainer : MonoBehaviour
 {
-    private List<GameObject> models;
+    public static List<GameObject> models;
     // Default index 
     private int selectionIndex = 0;
 
