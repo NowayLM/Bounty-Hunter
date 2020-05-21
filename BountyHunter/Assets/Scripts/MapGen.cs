@@ -12,6 +12,8 @@ public class MapGen : MonoBehaviour
     public Transform Bush;
     public Transform Water;
     public Transform Heal;
+    public Transform Hitbox;
+    public Transform WaterHitbox;
     [Range(-5f, 5f)]
     public float decalage;
 
@@ -40,6 +42,8 @@ public class MapGen : MonoBehaviour
                     {
                         Transform newTile = Instantiate(Wall, tilePosition + Vector3.up * .04f + Vector3.right * -0.28f + Vector3.forward * decalage, Quaternion.Euler(Vector3.right * -90)) as Transform;
                         newTile.localScale = wall1;
+                        Transform newTile2 = Instantiate(Hitbox, tilePosition + Vector3.up, Quaternion.Euler(Vector3.right * -90)) as Transform;
+                        newTile2.localScale = Vector3.one * (1 - outlinePercent);
                     }
                     else
                     {
@@ -56,6 +60,8 @@ public class MapGen : MonoBehaviour
                             {
                                 Transform newTile = Instantiate(Water, tilePosition - Vector3.up * .5f, Quaternion.Euler(Vector3.right * 90)) as Transform;
                                 newTile.localScale = Vector3.one * (1 - outlinePercent);
+                                Transform newTile2 = Instantiate(WaterHitbox, tilePosition + Vector3.up, Quaternion.Euler(Vector3.right * -90)) as Transform;
+                                newTile2.localScale = Vector3.one * (1 - outlinePercent);
                             }
                             else
                             {
