@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2966259249003742688}
   - component: {fileID: 85477405077823810}
   - component: {fileID: -9103277976359447087}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chevroLastshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
