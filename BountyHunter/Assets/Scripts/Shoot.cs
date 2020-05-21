@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     public GameObject bullet;
     public GameObject sniper;
     public GameObject wave;
+    public GameObject mortar;
     public int i = 0;
 
     // Start is called before the first frame update
@@ -26,17 +27,18 @@ public class Shoot : MonoBehaviour
         {
             if (GameModelsContainer.models[i].name == "Daeodon")
             {
-                GameObject projectile = Instantiate(bullet) as GameObject;
+                GameObject projectile = Instantiate(mortar) as GameObject;
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, 0, 0) + GameObject.Find("Player").transform.right;
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
-                rb.velocity = GameObject.Find("Player").transform.right * 7;
+                rb.velocity = (GameObject.Find("Player").transform.right + new Vector3(0, 1.25f, 0)) * 7;
             }
             else if (GameModelsContainer.models[i].name == "Hawk")
             {
                 GameObject projectile = Instantiate(sniper) as GameObject;
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, 0, 0) + GameObject.Find("Player").transform.right;
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
-                rb.velocity = GameObject.Find("Player").transform.right * 14;
+                projectile.transform.rotation = GameObject.Find("Player").transform.rotation;
+                rb.velocity = GameObject.Find("Player").transform.right * 18;
             }
             else if (GameModelsContainer.models[i].name == "Sonos")
             {

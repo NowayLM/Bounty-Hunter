@@ -18,12 +18,12 @@ public class GetTheMap : MonoBehaviour
         for (int i = 0; i < mapsList.Length; i++)
         {
             if (!mapsList[i].Contains(".meta"))
-                mapsList2.Add(mapsList[i]);
+            mapsList2.Add(mapsList[i]);
         }
         int l = mapsList2.Count;
         int randIndex = new System.Random().Next(l);
         string choice = mapsList2[randIndex];
         string substr = choice.Substring(choice.Length - 5);
         return substr[0].ToString();
-        }
+    }
 }
