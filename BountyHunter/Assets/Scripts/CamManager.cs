@@ -9,7 +9,7 @@ public class CamManager : MonoBehaviour
     {
 
         Camera.main.enabled = true;
-        Camera.main.transform.position = new Vector3(-12.5f, 13, -8.5f);
+        Camera.main.transform.position = new Vector3(-12.5f, 13, -9.6f);
     }
 
     // Update is called once per frame
