@@ -36,30 +36,30 @@ public class Controls : MonoBehaviour
         x = GameObject.Find("Player").transform.position.x;
         y = GameObject.Find("Player").transform.position.y;
         z = GameObject.Find("Player").transform.position.z;
-        float deltaX = Input.GetAxis("Vertical") / 10;
-        if (deltaX > 0.02)
+        float deltaX = Input.GetAxis("Vertical") * 5;
+        if (deltaX > 2)
         {
-            deltaX = 0.02f;
+            deltaX = 2;
         }
-        if (deltaX < -0.02)
+        if (deltaX < -2)
         {
-            deltaX = -0.02f;
+            deltaX = -2;
         }
-        float deltaZ = Input.GetAxis("Horizontal") / 10;
-        if (deltaZ > 0.02)
+        float deltaZ = Input.GetAxis("Horizontal") * 5;
+        if (deltaZ > 2)
         {
-            deltaZ = 0.02f;
+            deltaZ = 2;
         }
-        if (deltaZ < -0.02)
+        if (deltaZ < -2)
         {
-            deltaZ = -0.02f;
+            deltaZ = -2;
         }
         if(deltaX != 0 && deltaZ != 0)
         {
             deltaX /= 2;
             deltaZ /= 2;
         }
-        GameObject.Find("Player").transform.position += new Vector3 (deltaX, 0, 0 - deltaZ);
-        GameObject.Find("Player").transform.rotation = Quaternion.Euler(-90, Mathf.Rad2Deg * (Mathf.Atan2(deltaZ, deltaX)), 0);
+        GameObject.Find("Player").transform.position += new Vector3 (deltaX * Time.deltaTime, 0, 0 - deltaZ * Time.deltaTime);
+        GameObject.Find("Player").transform.rotation = Quaternion.Euler(-90, Mathf.Rad2Deg * (Mathf.Atan2(deltaZ * Time.deltaTime, deltaX * Time.deltaTime)), 0);
     }
 }

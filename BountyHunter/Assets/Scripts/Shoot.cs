@@ -31,7 +31,7 @@ public class Shoot : MonoBehaviour
                 GameObject projectile = Instantiate(mortar) as GameObject;
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, 0, 0) + GameObject.Find("Player").transform.right;
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
-                rb.velocity = (GameObject.Find("Player").transform.right + new Vector3(0, 1.25f, 0)) * 7;
+                rb.velocity = (GameObject.Find("Player").transform.right + new Vector3(0, 1.1f, 0)) * 6;
             }
             else if (GameModelsContainer.models[i].name == "Hawk")
             {
