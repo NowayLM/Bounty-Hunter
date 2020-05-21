@@ -959,6 +959,7 @@ MonoBehaviour:
   sniper: {fileID: 7681503144543792032, guid: 1ae66c051232e334d8436bbc4fd39342, type: 3}
   wave: {fileID: 7240583693669509395, guid: 455ee63ed9a045d439dea2f5506ae97f, type: 3}
   mortar: {fileID: 6680194563553906994, guid: 22649cf03c190ee46893bbca0fb9afa6, type: 3}
+  Chevro: {fileID: 3498321845540923304, guid: 2beb0b72f541e954182cb82a69c01bd3, type: 3}
   i: 0
 --- !u!4 &1470854529
 Transform:
@@ -1448,6 +1449,9 @@ MonoBehaviour:
   Bush: {fileID: -4216859302048453862, guid: 5ab3f3656cb6e384bac56d121278ae05, type: 3}
   Water: {fileID: 4102687030461678688, guid: e5ae0e2d7a22514458f88914b08d8909, type: 3}
   Heal: {fileID: -4216859302048453862, guid: 66447aaf42c5f1c49b7e1a9f10ba00f2, type: 3}
+  Hitbox: {fileID: 2750349451937292850, guid: 93b661bda65601e4e8dcf1fcca207ee7, type: 3}
+  WaterHitbox: {fileID: 8760140831720245717, guid: 74fd1ed4ce71ff445b4fab0baf8af156,
+    type: 3}
   decalage: -0.35
   outlinePercent: 0
 --- !u!4 &2053276068

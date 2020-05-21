@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     public GameObject sniper;
     public GameObject wave;
     public GameObject mortar;
+    public GameObject Chevro;
     public int i = 0;
 
     // Start is called before the first frame update
@@ -50,14 +51,14 @@ public class Shoot : MonoBehaviour
                 GameObject projectile = Instantiate(bullet) as GameObject;
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, 0, 0) + GameObject.Find("Player").transform.right;
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
-                rb.velocity = GameObject.Find("Player").transform.right * 7;
+                rb.velocity = GameObject.Find("Player").transform.right * 10;
             }
             else if (GameModelsContainer.models[i].name == "Chevro")
             {
-                GameObject projectile = Instantiate(bullet) as GameObject;
+                GameObject projectile = Instantiate(Chevro) as GameObject;
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, 0, 0) + GameObject.Find("Player").transform.right;
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
-                rb.velocity = GameObject.Find("Player").transform.right * 7;
+                rb.velocity = GameObject.Find("Player").transform.right * 10;
             }
         }
     }

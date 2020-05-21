@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1037864710664711194}
   - component: {fileID: 8176532529965846120}
   - component: {fileID: 2789123458619727420}
+  - component: {fileID: -6475551617291849158}
   m_Layer: 0
   m_Name: SonosShot
   m_TagString: Untagged
@@ -95,3 +96,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6475551617291849158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240583693669509395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac009242aa8df6c49ae7d650b5e87596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
