@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     public GameObject wave;
     public GameObject mortar;
     public GameObject Chevro;
-    public int i = 0;
+    public static int i = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,7 @@ public class Shoot : MonoBehaviour
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, 0, 0) + GameObject.Find("Player").transform.right;
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
                 rb.velocity = (GameObject.Find("Player").transform.right + new Vector3(0, 1.1f, 0)) * 6;
+                FindObjectOfType<AudioManager>().Play("DaeodonShoot");
             }
             else if (GameModelsContainer.models[i].name == "Hawk")
             {
@@ -40,11 +41,13 @@ public class Shoot : MonoBehaviour
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
                 projectile.transform.rotation = GameObject.Find("Player").transform.rotation;
                 rb.velocity = GameObject.Find("Player").transform.right * 18;
+                FindObjectOfType<AudioManager>().Play("HawkShoot");
             }
             else if (GameModelsContainer.models[i].name == "Sonos")
             {
                 GameObject projectile = Instantiate(wave) as GameObject;
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, .3f, 0) + GameObject.Find("Player").transform.right;
+                FindObjectOfType<AudioManager>().Play("SonosShoot");
             }
             else if (GameModelsContainer.models[i].name == "Tanky")
             {
@@ -52,6 +55,7 @@ public class Shoot : MonoBehaviour
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, 0, 0) + GameObject.Find("Player").transform.right;
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
                 rb.velocity = GameObject.Find("Player").transform.right * 10;
+                FindObjectOfType<AudioManager>().Play("TankyShoot");
             }
             else if (GameModelsContainer.models[i].name == "Chevro")
             {
@@ -59,6 +63,7 @@ public class Shoot : MonoBehaviour
                 projectile.transform.position = GameObject.Find("Player").transform.position - new Vector3(0, 0, 0) + GameObject.Find("Player").transform.right;
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
                 rb.velocity = GameObject.Find("Player").transform.right * 10;
+                FindObjectOfType<AudioManager>().Play("ChevroShoot");
             }
         }
     }
