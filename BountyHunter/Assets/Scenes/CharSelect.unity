@@ -2128,7 +2128,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: ChevroShoot
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 72c94e259fa580d41b1d3240f3b6e388, type: 3}
     volume: 0.7
     pitch: 1
     loop: 0

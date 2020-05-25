@@ -17,7 +17,7 @@ public class MapGen : MonoBehaviour
     [Range(-5f, 5f)]
     public float decalage;
 
-    [Range(0,1)]
+    [Range(0, 1)]
     public float outlinePercent;
 
     private static Vector3 wall1 = new Vector3(0.9f, 0.63f, 1) * 24;
@@ -31,7 +31,7 @@ public class MapGen : MonoBehaviour
             for (int y = 0; y < arr[x].Length; y++)
             {
                 Vector3 tilePosition = new Vector3(-arr.Length / 2 + 0.5f + x, 0, -arr[x].Length + 0.5f + y);
-                if (arr[x][y] == '.') 
+                if (arr[x][y] == '.' || arr[x][y] == '1')
                 {
                     Transform newTile = Instantiate(Ground, tilePosition - Vector3.up * .2f, Quaternion.Euler(Vector3.right * 90)) as Transform;
                     newTile.localScale = Vector3.one * (1 - outlinePercent);
@@ -76,62 +76,51 @@ public class MapGen : MonoBehaviour
                         }
                     }
                 }
-                
+
+            }
+        }
+    }
+        /**
+        * readMap
+        * 
+        * Read a map text file and convert into a char[][]
+        * 
+        * Expected syntax for map files:
+        * 
+        * ......
+        * ..22..
+        * .2.2.2
+        * ......
+        * ..22..
+        * .2.2.2
+        * 
+        * etc.
+        *
+        */
+        public static char[][] ReadMap(string mapName)
+        {
+            // Get the map asset
+            TextAsset mapAsset = Resources.Load<TextAsset>("Maps/" + mapName);
+
+            // Read the lines of the specified map
+            string[] mapLines = mapAsset.text.Split('\n');
+
+            // List to hold the lines of char[]
+            List<char[]> mapList = new List<char[]>();
+
+            // Parse each line
+            foreach (string mapLine in mapLines)
+            {
+                // Trim commas (they are optional)
+                // Convert strings to char[] and add to the list
+                mapList.Add(mapLine.Trim(new char[] { ',' }).ToCharArray());
             }
 
-        }
+            // Convert to char[][] (array of arrays) a  nd return
+            return mapList.ToArray();
     }
-
-    /**
-     * readMap
-     * 
-     * Read a map text file and convert into a char[][]
-     * 
-     * Expected syntax for map files:
-     * 
-     * ......
-     * ..22..
-     * .2.2.2
-     * ......
-     * ..22..
-     * .2.2.2
-     * 
-     * etc.
-     *
-     */
-    public static char[][] ReadMap(string mapName)
-    {
-        // Get the map asset
-        TextAsset mapAsset = Resources.Load<TextAsset>("Maps/" + mapName);
-
-        // Read the lines of the specified map
-        string[] mapLines = mapAsset.text.Split('\n');
-
-        // List to hold the lines of char[]
-        List<char[]> mapList = new List<char[]>();
-
-        // Parse each line
-        foreach (string mapLine in mapLines)
-        {
-            // Trim commas (they are optional)
-            // Convert strings to char[] and add to the list
-            mapList.Add(mapLine.Trim(new char[] { ',' }).ToCharArray());
-        }
-
-        // Convert to char[][] (array of arrays) a  nd return
-        return mapList.ToArray();
-
-}
-
-
-void Start()
+    void Start()
     {
         GenMap();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
