@@ -61,9 +61,5 @@ public class Controls : MonoBehaviour
         }
         GameObject.Find("Player").transform.position += new Vector3 (deltaX * Time.deltaTime, 0, 0 - deltaZ * Time.deltaTime);
         GameObject.Find("Player").transform.rotation = Quaternion.Euler(-90, Mathf.Rad2Deg * (Mathf.Atan2(deltaZ * Time.deltaTime, deltaX * Time.deltaTime)), 0);
-        if (Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
     }
 }

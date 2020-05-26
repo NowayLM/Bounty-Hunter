@@ -26,4 +26,20 @@ public class GetTheMap : MonoBehaviour
         string substr = choice.Substring(choice.Length - 5);
         return substr[0].ToString();
     }
+
+    public static string GetMap2()
+    {
+        string[] mapsList = System.IO.Directory.GetFiles(System.IO.Directory.GetCurrentDirectory() + "/Assets/Resources/Maps");
+        List<int> mapsList2 = new List<int>();
+        int res = 0;
+        for (int i = 0; i < mapsList.Length; i++)
+        {
+            if (!mapsList[i].Contains(".meta"))
+                res++;
+        }
+        int mapnb = res + 1;
+        return mapnb.ToString();
+    }
+
+    public static string newMap = GetMap2();
 }
