@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
@@ -65,6 +65,10 @@ public class Shoot : MonoBehaviour
                 rb.velocity = GameObject.Find("Player").transform.right * 10;
                 FindObjectOfType<AudioManager>().Play("ChevroShoot");
             }
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

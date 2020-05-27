@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HUDManager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class HUDManager : MonoBehaviour
         str = string.Format("{0}:{1}", minutes, seconds);
         if(minutes == "2")
         {
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
 
     }
