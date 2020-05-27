@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapGen : MonoBehaviour
 {
@@ -118,7 +119,16 @@ public class MapGen : MonoBehaviour
 
             // Convert to char[][] (array of arrays) a  nd return
             return mapList.ToArray();
+        }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
+
     void Start()
     {
         GenMap();
