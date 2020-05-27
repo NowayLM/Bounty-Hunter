@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EditorMapGen : MonoBehaviour
 {
@@ -157,6 +158,13 @@ public class EditorMapGen : MonoBehaviour
     private void Awake()
     {
 
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void Start()
